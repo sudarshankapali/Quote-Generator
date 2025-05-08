@@ -26,5 +26,6 @@ function generate(){
       ];           
 
     let x = Math.floor((Math.random() * 10) + 1);
-    document.getElementById("quote").innerText = scienceQuotes[x];
+    const element = document.getElementById("options").value;
+    document.getElementById("quote").innerText = element;
 }
