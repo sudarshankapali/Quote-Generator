@@ -44,3 +44,9 @@ function mode(){
     var element = document.body;
     element.classList.toggle("dark-mode");
 }
+
+function changeSizeBySlider(){
+    let slider = document.getElementById("slider");
+    // Set slider value as fontSize
+    document.getElementById("quote").style.fontSize = slider.value + "px";
+}

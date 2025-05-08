@@ -9,12 +9,16 @@
 <body>
     <div>
         Quote of the day
-        <button onclick="mode()">Switch mode</button>
+        <button onclick="mode()">Light/Dark mode</button>
         <select id="options">
             <option value="science">Science</option>
             <option value="life">Life</option>
         </select>
         <div id="quote">generated quote is displayed here</div>
+        <br>
+        <input type="range" min="10" max="30" id="slider" value="20"
+            onchange="changeSizeBySlider()" />
+            <br>
         <button onclick="generate()">Generate</button>
         <button onclick="previousQuote()">Previous</button>
         <button onclick="nextQuote()">Next</button>
