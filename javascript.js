@@ -91,4 +91,16 @@ function previousQuote(){
         updateDisplay();
       }
 }
-  
+
+function copyToClipboard(){
+    let text = document.getElementById("quote").innerHTML;
+    const copyContent = async () => {
+        try {
+          await navigator.clipboard.writeText(text);
+          alert('Content copied to clipboard');
+        } catch (err) {
+          alert('Failed to copy: ', err);
+        }
+      }
+      copyContent();
+}
