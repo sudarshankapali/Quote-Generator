@@ -1,3 +1,24 @@
+let currentIndex = -1;
+
+function loadStrings() {
+    const stored = sessionStorage.getItem('randomQuotes');
+    return stored ? JSON.parse(stored) : [];
+  }
+
+  function saveStrings(arr) {
+    sessionStorage.setItem('randomQuotes', JSON.stringify(arr));
+  }
+
+  function updateDisplay() {
+    const strings = loadStrings();
+    const display = document.getElementById('quote');
+    if (currentIndex >= 0 && currentIndex < strings.length) {
+      display.textContent = strings[currentIndex];
+    } else {
+      display.textContent = 'No string selected';
+    }
+  }
+
 function generate(){
     const scienceQuotes = [
         "[Science] Science is a way of thinking much more than it is a body of knowledge. — Carl Sagan",
@@ -26,17 +47,23 @@ function generate(){
       ];           
 
     let x = Math.floor((Math.random() * 10));
-    let count = 0;
     let quote;
+    let strings = loadStrings(); 
     const element = document.getElementById("options").value;
     if(element == "science"){
         quote = scienceQuotes[x];
+        strings.push(quote);
+        saveStrings(strings);                  
+        currentIndex = strings.length - 1;      
+        updateDisplay(); 
         document.getElementById("quote").innerText = quote;
-        webStorageObject.setItem(count++, quote);
     }else{
         quote = lifeQuotes[x];
+        strings.push(quote);
+        saveStrings(strings);
+        currentIndex = strings.length - 1;
+        updateDisplay(); 
         document.getElementById("quote").innerText = quote;
-        webStorageObject.setItem(count++,quote);
     }
 }
 
@@ -50,3 +77,6 @@ function changeSizeBySlider(){
     // Set slider value as fontSize
     document.getElementById("quote").style.fontSize = slider.value + "px";
 }
+
+
+  
