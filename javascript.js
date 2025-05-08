@@ -74,9 +74,21 @@ function mode(){
 
 function changeSizeBySlider(){
     let slider = document.getElementById("slider");
-    // Set slider value as fontSize
     document.getElementById("quote").style.fontSize = slider.value + "px";
 }
 
+function nextQuote(){
+    let strings = loadStrings();
+    if (currentIndex < strings.length - 1) {
+        currentIndex++;
+        updateDisplay();
+      }
+}
 
+function previousQuote(){
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateDisplay();
+      }
+}
   
