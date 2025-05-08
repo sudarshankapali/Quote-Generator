@@ -26,10 +26,21 @@ function generate(){
       ];           
 
     let x = Math.floor((Math.random() * 10));
+    let count = 0;
+    let quote;
     const element = document.getElementById("options").value;
     if(element == "science"){
-        document.getElementById("quote").innerText = scienceQuotes[x];
+        quote = scienceQuotes[x];
+        document.getElementById("quote").innerText = quote;
+        webStorageObject.setItem(count++, quote);
     }else{
-        document.getElementById("quote").innerText = lifeQuotes[x];
+        quote = lifeQuotes[x];
+        document.getElementById("quote").innerText = quote;
+        webStorageObject.setItem(count++,quote);
     }
+}
+
+function mode(){
+    var element = document.body;
+    element.classList.toggle("dark-mode");
 }

@@ -9,12 +9,15 @@
 <body>
     <div>
         Quote of the day
+        <button onclick="mode()">Switch mode</button>
         <select id="options">
             <option value="science">Science</option>
             <option value="life">Life</option>
         </select>
         <div id="quote">generated quote is displayed here</div>
         <button onclick="generate()">Generate</button>
+        <button onclick="previousQuote()">Previous</button>
+        <button onclick="nextQuote()">Next</button>
     </div>
     <script src="javascript.js"></script>
 </body>
