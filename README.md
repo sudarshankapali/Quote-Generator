@@ -13,6 +13,3 @@ This is a simple **Quote Generator** web application built using only **HTML, CS
 - 📱 **Mobile-Friendly UI** — The app is responsive and works well on various screen sizes.
 - 📋 **Clipboard Support** — Copy the currently displayed quote to the clipboard with one click.
 - 🧠 **State Management** — Recently generated quotes are stored using `sessionStorage`.
-
-## 📁 Project Structure
-
